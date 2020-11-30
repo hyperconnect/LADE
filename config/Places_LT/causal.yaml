@@ -1,0 +1,40 @@
+criterions:
+  PerformanceLoss:
+    def_file: ./loss/SoftmaxLoss.py
+    loss_params: {}
+    optim_params: null
+    weight: 1.0
+last: false
+# apply incremental pca to remove main components
+apply_ipca: false
+num_components: 512
+model_dir: null
+tuning_memory: false
+networks:
+  classifier:
+    def_file: ./models/CausalNormClassifier.py
+    optim_params: {lr: 0.05, momentum: 0.9, weight_decay: 0.0005}
+    scheduler_params: {coslr: false, endlr: 0.0, step_size: 10, gamma: 0.1, warmup: false}
+    params: {dataset: Places_LT, feat_dim: 2048, num_classes: 365, stage1_weights: false, use_effect: true, num_head: 2, tau: 16.0, alpha: 3.0, gamma: 0.03125}
+  feat_model:
+    def_file: ./models/ResNet152Feature.py
+    fix: false
+    optim_params: {lr: 0.001, momentum: 0.9, weight_decay: 0.0005}
+    scheduler_params: {coslr: false, endlr: 0.0, step_size: 10, gamma: 0.1, warmup: false}
+    params: {dataset: Places_LT, dropout: null, stage1_weights: false, use_fc: false, caffe: True}
+shuffle: false
+training_opt:
+  batch_size: 128
+  dataset: Places_LT
+  display_step: 10
+  display_grad: False
+  display_grad_step: 10
+  feature_dim: 2048
+  log_dir: ./logs/Places_LT/models/resnet152_e90_causal_norm_classifier_head2
+  log_root: /logs/Places_LT
+  num_classes: 365
+  num_epochs: 30
+  num_workers: 4
+  open_threshold: 0.1
+  sampler: null
+  sub_dir: models

@@ -1,0 +1,43 @@
+criterions:
+  PerformanceLoss:
+    def_file: ./loss/PriorCELoss.py
+    loss_params: {num_classes: 100, prior: 0.1, img_max: 500}
+    optim_params: null
+    weight: 1.0
+last: false
+# apply incremental pca to remove main components
+apply_ipca: false
+num_components: 512
+model_dir: null
+tuning_memory: false
+networks:
+  classifier:
+    def_file: ./models/DotProductClassifier.py
+    optim_params: {lr: 0.2, momentum: 0.9, weight_decay: 0.0005, threshold_momentum: 0.0}
+    scheduler_params: {coslr: false, endlr: 0.0, gamma: 0.1, step_size: 30, warmup: true, lr_step: [120, 160], lr_factor: 0.01, warm_epoch: 5}
+    params: {dataset: CIFAR100_LT, feat_dim: 128, num_classes: 100}
+  feat_model:
+    def_file: ./models/ResNet32Feature.py
+    fix: false
+    optim_params: {lr: 0.2, momentum: 0.9, weight_decay: 0.0005}
+    scheduler_params: {coslr: false, endlr: 0.0, gamma: 0.1, step_size: 30, warmup: true, lr_step: [120, 160], lr_factor: 0.01, warm_epoch: 5}
+    params: {dataset: CIFAR100_LT, dropout: null, stage1_weights: false, use_fc: false, pretrain: false}
+shuffle: false
+training_opt:
+  backbone: resnet32
+  batch_size: 256
+  dataset: CIFAR100_LT
+  display_step: 10
+  display_grad: False
+  display_grad_step: 10
+  feature_dim: 128
+  log_dir: ./exp_results/test
+  work_dir: ./exp_results
+  exp_name: test
+  num_classes: 100
+  cifar_imb_ratio: 0.1   # 0.01, 0.02, 0.1 for 100, 50, 10
+  num_epochs: 200
+  num_workers: 12
+  open_threshold: 0.1
+  sampler: null
+  sub_dir: models
