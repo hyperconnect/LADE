@@ -68,3 +68,14 @@ For CIFAR-100 (Supplementary material):
 ```
 ./notebooks/cifar100-shift-calib.ipynb
 ```
+
+### Citation
+If you find our paper or this project helps your research, please kindly consider citing our paper in your publications.
+```
+@article{hong2020disentangling,
+  title={Disentangling Label Distribution for Long-tailed Visual Recognition},
+  author={Hong, Youngkyu and Han, Seungju and Choi, Kwanghee and Seo, Seokjun and Kim, Beomsu and Chang, Buru},
+  journal={arXiv preprint arXiv:2012.00321},
+  year={2020}
+}
+```
