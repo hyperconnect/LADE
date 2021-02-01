@@ -1,3 +1,7 @@
+"""Copyright (c) Hyperconnect, Inc. and its affiliates.
+All rights reserved.
+"""
+
 import functools
 
 import numpy as np

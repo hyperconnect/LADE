@@ -1,4 +1,7 @@
-"""Copyright (c) Facebook, Inc. and its affiliates.
+"""Copyright (c) Hyperconnect, Inc. and its affiliates.
+All rights reserved.
+
+Copyright (c) Facebook, Inc. and its affiliates.
 All rights reserved.
 
 This source code is licensed under the license found in the
