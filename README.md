@@ -69,6 +69,9 @@ For CIFAR-100 (Supplementary material):
 ./notebooks/cifar100-shift-calib.ipynb
 ```
 
+### License
+The use of this software is released under BSD-3.
+
 ### Citation
 If you find our paper or this project helps your research, please kindly consider citing our paper in your publications.
 ```
