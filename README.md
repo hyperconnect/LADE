@@ -1,5 +1,7 @@
 # Disentangling Label Distribution for Long-tailed Visual Recognition
 
+- [Arxiv link](https://arxiv.org/abs/2012.00321)
+
 - This codebase is built on [Causal Norm](https://github.com/KaihuaTang/Long-Tailed-Recognition.pytorch).
 
 ## Install
