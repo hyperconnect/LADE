@@ -1,4 +1,4 @@
-# Disentangling Label Distribution for Long-tailed Visual Recognition
+# Disentangling Label Distribution for Long-tailed Visual Recognition (CVPR 2021)
 
 - [Arxiv link](https://arxiv.org/abs/2012.00321)
 
