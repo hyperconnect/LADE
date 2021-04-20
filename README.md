@@ -1,7 +1,6 @@
 # Disentangling Label Distribution for Long-tailed Visual Recognition (CVPR 2021)
-
 - [Arxiv link](https://arxiv.org/abs/2012.00321)
-
+- [Blog post](https://hyperconnect.github.io/2021/04/05/ailab-lade.html)
 - This codebase is built on [Causal Norm](https://github.com/KaihuaTang/Long-Tailed-Recognition.pytorch).
 
 ## Install
